@@ -1,0 +1,153 @@
+
+{% extends "base.html" %}
+
+{% block content %} 
+<style>
+    body {
+        background: #ffffff
+    }
+    
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8
+    }
+    
+    .profile-button {
+        background: rgb(99, 39, 120);
+        box-shadow: none;
+        border: none
+    }
+    
+    .profile-button:hover {
+        background: #682773
+    }
+    
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none
+    }
+    
+    .back:hover {
+        color: #682773;
+        cursor: pointer
+    }
+    
+    .labels {
+        font-size: 11px
+    }
+    
+    .add-experience:hover {
+        background: #BA68C8;
+        color: #fff;
+        cursor: pointer;
+        border: solid 1px #BA68C8
+    }
+
+</style>
+<form method='POST' action="" enctype='multipart/form-data'>
+        {{ form.hidden_tag() }}
+        {{ form.csrf_token }}
+
+
+<div class="container-xl px-4 mt-4">
+
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                        <img class="rounded-circle mt-5" width="150px" src="{{ image_file }}"><span class="font-weight-bold">{{ edit_profile.name }}</span>
+                        <span class="text-black-50">{{ edit_profile.email }}</span>
+                        <span><small><div class="col-md-15">
+                            <br><br><br>
+                            <h6>{{ form.user_img.label(class = 'form-control-label') }}</h6>
+                            {{ form.user_img (class = 'form-control-file') }}
+                            {% if form.user_img.errors %}
+                                  {% for error in form.user_img.errors %}
+                                    <span class="text-danger">{{error}}</span>
+                                  {% endfor %}
+                                  {% endif %}
+                        </div></small></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <h6>{{ form.first_name.label(class = 'form-control-label') }}</h6>{{ form.first_name(class = 'form-control') }}
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <h6>{{ form.last_name.label(class = 'form-control-label') }}</h6>{{ form.last_name(class = 'form-control') }}
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6>{{ form.username.label(class = 'form-control-label') }}</h6>
+                                   {% if form.username.errors %}
+                                     {{ form.username (class="form-control is-invalid") }}
+                                       <div class="invalid-feedback">
+                                         {% for error in form.username.errors %}
+                                           <span>{{error}}</span>
+                                         {% endfor %}
+                                         {% else %}
+                                           {{ form.username (class = 'form-control') }}
+                                         {% endif %}
+                               </div>
+                        
+
+
+                               <div class="row gx-3 mb-3">
+                           
+                                <div class="col-md-6">
+                                    <h6>{{ form.user_description.label(class = 'form-control-label') }}</h6>{{ form.user_description(class = 'form-control') }}
+                                </div>
+                               
+                                <div class="col-md-6">
+                                    <h6>{{ form.user_address.label(class = 'form-control-label') }}</h6>{{ form.user_address(class = 'form-control') }}
+                                </div>
+                            </div>
+
+
+
+                        <div class="col-md-100 form-group">
+                            {{ form.user_country.label(class = 'form-select-label') }} {{ form.user_country (class = 'form-select') }}
+                        </div>
+                       
+                        <div class="w-10 form-group">
+                            {{ form.user_state.label(class = 'form-select-label') }} {{ form.user_state (class = 'form-select') }}
+                        </div>
+                       
+                        <div class="mb-3 form-group">
+                            {{ form.user_gender.label(class = 'form-select-label') }} {{ form.user_gender(class = 'form-select') }}
+                        </div>
+
+
+                        <!-- Form Row-->
+                       
+                        
+                        <!-- Save changes button-->
+                        {{form.submit (class="btn btn-primary" ) }}
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

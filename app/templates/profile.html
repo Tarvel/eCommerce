@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<style>
+    .rounded-circle {
+        border-radius: 50%; /* Set border radius to 50% to create a circular shape */
+    }
+
+    .long-button {
+        width: 800px; /* Set the width of the button */
+    }
+    
+    
+</style>
+
+<section class="h-100 gradient-custom-2" >
+    
+    <div class="row d-flex justify-content-center align-items-center h-100"> 
+        <img src="{{ image_file }}" alt="Profile Image" class="rounded-circle" style="width: 120px; height: 120px;">
+        
+        <h5>{{ profile.name }}</h5>
+        {% if profile.user_gender != '0' %}
+        <p>{{ profile.user_gender }}</p>
+        {% else %}
+        <p>---</p>
+        {% endif %}
+
+        {% if profile.user_state %}
+        <p>{{ profile.user_state }} State</p>
+        {% else %}
+        <p>Earth</p>
+        {% endif %}
+
+        {% if current_user.is_authenticated %}
+        {% if profile.username in current_user.username %}
+        <a  href="{{url_for('auth.edit_profile', username=profile.username)}}">
+            <br>
+            <button type="button"  data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-dark long-button" data-mdb-ripple-color="dark">
+        Edit profile
+      </button></a>
+      {% endif %}
+      {% endif %}
+     </div>      
+                  
+            
+            <div class="ms-3 flex-column align-items-center" style="margin-top: 10px;" >
+    
+              </div>
+              </div>
+             
+      
+            <div class="card-body p-4 text-black">
+              <div class="mb-5">
+                <p class="lead fw-normal mb-1">About</p>
+                <div class="p-4" style="background-color: #f8f9fa;">
+                  <p class="font-italic mb-1">{{ profile.user_description }}</p>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0">Recent photos</p>
+                <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+              </div>
+              <div class="row g-2">
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+                <div class="col mb-2">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+              </div>
+              <div class="row g-2">
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+                <div class="col">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                    alt="image 1" class="w-100 rounded-3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    {% endblock %}

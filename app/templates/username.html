@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="content-section">
+    
+    <form method='POST', action="">
+    {{ username.hidden_tag() }}
+    {{ username.csrf_token }}
+        <div class="row mb-4">
+            <div data-mdb-input-init class="username-outline mb-4">
+                {{ username.username.label(class = 'username-control-label') }}
+                {% if username.username.errors %}
+                            {{ username.username (class="username-control is-invalid") }}
+                              <div class="invalid-feedback">
+                                  {% for error in username.username.errors %}
+                                      <span>{{error}}</span>
+                                  {% endfor %}
+                          {% else %}
+                              {{ username.username (class = 'username-control') }}
+                          {% endif %}
+              </div>
+          
+
+               <!-- Submit button -->
+    {{username.submit (class="btn btn-primary btn-block mb-4") }}
+
+            </form>
+    
+{% endblock content %}
