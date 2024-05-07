@@ -1,6 +1,6 @@
 # Ecommerece Flask Project
 
-## Fullstack Ecommerece website with.
+## Fullstack Ecommerece website.
 
 ### Technologies Used:
 - Flask
