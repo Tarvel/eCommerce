@@ -1,5 +1,7 @@
 # Ecommerece Flask Project
 
+Flask
+
 ## Fullstack Ecommerece website.
 
 ### Technologies Used:
@@ -7,8 +9,9 @@
 - Python 3.9
 - Any additional libraries you used
 
-### Folder Structure (Highlighted):
+### Folder Structure 📂 (Highlighted):
 ```
+
 project-root/
 │
 ├── config.py
