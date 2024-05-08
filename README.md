@@ -1,8 +1,7 @@
 # Ecommerece Flask Project
 
-![alt text](https://www.techlifediary.com/wp-content/uploads/2020/09/1_0G5zu7CnXdMT9pGbYUTQLQ.png)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)   ![Postgresql](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 
-![alt text](https://banner2.cleanpng.com/20181117/trz/kisspng-logo-psql-brand-product-font-postgresql-wikipedia-games-warface-ru-5bf0dec1dd6ac5.5634737615425123219069.jpg)
 
 ## Fullstack Ecommerece website.
 
