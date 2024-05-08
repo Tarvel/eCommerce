@@ -85,7 +85,7 @@ def register():
             db.session.add(user)
             db.session.commit()
             login_user(user)
-            notif_mssg = ('Welcome ' + current_user.name)
+            notif_mssg = ('Welcome, ' + current_user.name)
             new_notifs = Notification(notification=notif_mssg, user_id=current_user.id)
             db.session.add(new_notifs)
             db.session.commit()
