@@ -1,4 +1,3 @@
-from django.forms import ImageField
 from flask_migrate import current
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField, PasswordField, FileField, TextAreaField, MultipleFileField
