@@ -5,10 +5,12 @@
 
 ## Fullstack Ecommerece website.
 
+# DEPLOYED AT: https://ecommerce-1-rlgb.onrender.com/
+
 ### Technologies Used:
 - Flask
 - Python 3.9
-- Any additional libraries you used
+- PostgreSQL
 
 ### Folder Structure 📂 (Highlighted):
 ```
